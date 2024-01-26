@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Django home</title>
-</head>
+  </head>
 
-<body >
-    <h1  style="text-align: center; ">This is my Django home </h1>
-    <p style="text-align: center; ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius eaque similique, deleniti obcaecati est at dolor
-        corporis! Mollitia itaque nulla repudiandae porro, tenetur fugit maxime? Magnam doloremque exercitationem fuga.
-        Quas? </p>
-</body>
+  <body>
+    {{peoples}}
 
+    <table>
+      <tr>
+        <th>S. No</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+      {% for people in peoples %}
+      <tr>
+        <td>{{forloop.counter }}</td>
+        <td>{{people.name | truncatechars:4}}</td>
+        <td>{{people.age}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <h1 style="text-align: center">This is my Django home</h1>
+    <p style="text-align: center">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius eaque
+      similique, deleniti obcaecati est at dolor corporis! Mollitia itaque nulla
+      repudiandae porro, tenetur fugit maxime? Magnam doloremque exercitationem
+      fuga. Quas?
+    </p>
+  </body>
 </html>
